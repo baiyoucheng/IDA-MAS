@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./backend:/app/backend
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_API_BASE=${DEEPSEEK_API_BASE:-https://api.deepseek.com}
+      - SILICONFLOW_API_KEY=${SILICONFLOW_API_KEY}
+      - SILICONFLOW_API_BASE=${SILICONFLOW_API_BASE:-https://api.siliconflow.cn/v1}
+      - CHROMA_DIR=/app/data/chroma
+      - UPLOAD_DIR=/app/data/uploads
+    restart: unless-stopped
+
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    restart: unless-stopped
+
+volumes:
+  chroma-data:

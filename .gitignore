@@ -1,0 +1,30 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Data (runtime)
+data/uploads/*
+!data/uploads/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Dependencies
+venv/
+.venv/
