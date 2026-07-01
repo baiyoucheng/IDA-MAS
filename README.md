@@ -202,10 +202,10 @@ ida-mas/
 
 ## 作者
 
-**白祐丞** — 华中科技大学 人工智能与自动化学院 大三
+**白祐丞**
 
 - 技术栈：Python / PyTorch / CUDA / LLM / Agent / RAG
-- GitHub：[your-username](https://github.com/your-username)
+- GitHub：[baiyoucheng](https://github.com/baiyoucheng)
 
 ---
 
